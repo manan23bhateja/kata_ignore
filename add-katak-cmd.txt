@@ -1,0 +1,249 @@
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata (master)
+$ ls
+git-katas/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata (master)
+$ cd git-katas/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas (master)
+$ ls
+3-way-merge/                  commit-on-wrong-branch/    rebase-branch/
+LICENSE.txt                   commit-on-wrong-branch-2/  rebase-exec/
+Overview.md                   configure-git/             rebase-interactive-autosquash/
+README.md                     detached-head/             reorder-the-history/
+SHELL-BASICS.md               docs/                      reset/
+advanced-rebase-interactive/  ff-merge/                  restore/
+alias/                        git-attributes/            reverted-merge/
+amend/                        git-tag/                   save-my-commit/
+bad-commit/                   ignore/                    squashing/
+basic-branching/              images/                    submodules/
+basic-cherry-pick/            investigation/             subtree/
+basic-cleaning/               lfs/                       test-all.sh*
+basic-commits/                master-based-workflow/     test.ps1
+basic-revert/                 merge-conflict/            test.sh*
+basic-staging/                merge-driver/              testzsh.sh*
+basic-stashing/               merge-mergesort/           utils/
+bisect/                       objects/
+change-author/                pre-push/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas (master)
+$ cd ignore/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore (master)
+$ source setup.sh
+Initialized empty Git repository in C:/Users/Manan Bhateja/Desktop/kattas/clone_kata/git-katas/ignore/exercise/.git/
+Switched to a new branch 'master'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ touch foo.s
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status -s
+?? file1.txt
+?? foo.s
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ vi .gitignore
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git add .
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git commit -m "git ignore"
+[master (root-commit) 6efc783] git ignore
+ 2 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 file1.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git add .
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status -s
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git commit -m "file commited"
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ vi .gitignore
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ vi f
+file1.txt  foo.s
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ vi file1.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ touch hello.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git rm --cached
+fatal: No pathspec was given. Which files should I remove?
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git rm --cached file1.txt
+rm 'file1.txt'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ touch file2.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ vi .gitignore
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/clone_kata/git-katas/ignore/exercise (master)
+$ vi add-kata-cmd.txt
+
